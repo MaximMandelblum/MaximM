@@ -1,0 +1,13 @@
+---
+- name: running python script
+  gather_facts: No
+  hosts: localhost
+  become: yes
+  become_user: root
+  tasks:
+
+        - name: start create_collection
+          shell: cd /root/working_dir/python; python create_collection.py 127.0.0.1
+
+        - name: start tweet listener in background
+          shell: cd /root/working_dir/python; nohup python tweety.py 127.0.0.1  2>&1 &

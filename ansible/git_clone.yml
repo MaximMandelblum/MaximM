@@ -1,0 +1,18 @@
+---
+- name: clone from git
+  gather_facts: No
+  hosts: localhost
+  become: yes
+  become_user: root
+  tasks:
+
+        - name: create httpd web diretory
+          file:
+             path: /root/working_dir
+             state: directory
+             mode: 0775
+
+        - name: git clone from github
+          git:
+            repo: 'https://github.com/zivvilozni/tweetMongo.git'
+            dest: /root/working_dir

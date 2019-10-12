@@ -1,0 +1,15 @@
+---
+- name: docker compose up
+  gather_facts: No
+  hosts: localhost
+  become: yes
+  become_user: root
+  tasks:
+
+   - name: docker compose up
+     docker_service:
+        project_src: /root/working_dir/ansible
+        project_name: "tweeter-app"
+        pull: true
+        state: present
+        restarted: true
