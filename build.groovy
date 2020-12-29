@@ -1,3 +1,3 @@
-stage("test) {
-  echo "success1111111111!Maxim"
- }
+stage("test") {
+  echo "sssssssuccess!"
+}
